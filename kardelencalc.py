@@ -73,7 +73,7 @@ class CalculationLogic:
     def _format_expression_for_history(self, expression):
         return expression.replace("**", "^").replace("/", "÷").replace("*", "×")
 
-#görünüm classı
+#görünüm classı hatası düzeltildi
 class CalculatorUI:
     def __init__(self, window, logic):
         self.window = window
