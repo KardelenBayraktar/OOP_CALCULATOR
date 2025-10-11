@@ -1,14 +1,12 @@
 import customtkinter as ctk
 import math
 
-# --- Stil ve Font Tanımlamaları ---
 LARGE_FONT_STYLE = ("Arial", 40, "bold")
 SMALL_FONT_STYLE = ("Arial", 16)
 DIGITS_FONT_STYLE = ("Arial", 24, "bold")
 DEFAULT_FONT_STYLE = ("Arial", 20)
 HISTORY_FONT_STYLE = ("Arial", 18)
 
-# Geliştirilmiş Renk Paleti
 FENER_LACIVERT = "#001450"
 FENER_SARI = "#FBB100"
 FENER_BEYAZ = "#FFFFFF"
@@ -16,14 +14,11 @@ DISPLAY_BG_COLOR = "#DDE2E5"
 ADVANCED_OP_COLOR = "#27AE60"
 WHITE = "#FFFFFF"
 
-# =============================================================================
-# SINIF 1: HESAPLAMA MOTORU (BEYİN)
-# =============================================================================
 class CalculationLogic:
     def __init__(self):
         self.total_expression = ""
         self.current_expression = ""
-        self.history = [] # <-- YENİ: Geçmiş listesi
+        self.history = [] 
 
     def add_to_expression(self, value):
         self.current_expression += str(value)
@@ -78,9 +73,7 @@ class CalculationLogic:
     def _format_expression_for_history(self, expression):
         return expression.replace("**", "^").replace("/", "÷").replace("*", "×")
 
-# =============================================================================
-# SINIF 2: KULLANICI ARAYÜZÜ (GÖRÜNÜM)
-# =============================================================================
+#görünüm classı
 class CalculatorUI:
     def __init__(self, window, logic):
         self.window = window
@@ -136,10 +129,10 @@ class CalculatorUI:
         self._create_button("xʸ", self._make_command(self.logic.append_operator, "**"), 0, 1, sci_options)
         self._create_button("x!", self._make_command(self.logic.calculate_factorial), 0, 2, sci_options)
         
-        # Geçmiş Butonu
+        # geçmiş butonu
         self._create_button("⎋", self._show_history_window, 0, 3, {"fg_color": FENER_LACIVERT, "hover_color": "#002884"})
 
-    # Geçmiş Penceresini gösteren fonksiyon
+    # Geçmişi gösteren fonksiyon
     def _show_history_window(self):
         if self.history_window_open: return
         
@@ -201,9 +194,8 @@ class CalculatorUI:
 
     def _get_op_symbol(self, op): return {"/": "\u00F7", "*": "\u00D7", "**": " ^ "}.get(op, op)
 
-# =============================================================================
-# SINIF 3: UYGULAMA YÖNETİCİSİ (ORKESTRA ŞEFİ)
-# =============================================================================
+
+# orkestra şefi
 class CalculatorApp:
     def __init__(self):
         ctk.set_appearance_mode("Dark")
