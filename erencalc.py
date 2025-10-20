@@ -211,12 +211,12 @@ class CalculatorUI:
 
         # BUNU BAŞARAMADIM
             # subframe for brackets
-            #parent_frame = ctk.CTkFrame(self.buttons_frame, fg_color="transparent")
-            #parent_frame.grid(row=4, column=4, sticky="nsew", padx=4, pady=4)
-            #parent_frame.columnconfigure(0, weight=1)
-            #parent_frame.columnconfigure(1, weight=1)
-            #self._create_button("(", self._make_command(self.logic.append_operator, "("), 0, 0, sci_options, parent=parent_frame)
-            #self._create_button(")", self._make_command(self.logic.append_operator, ")"), 0, 1, sci_options, parent=parent_frame)
+            # parent_frame = ctk.CTkFrame(self.buttons_frame, fg_color="transparent")
+            # parent_frame.grid(row=4, column=4, sticky="nsew", padx=4, pady=4)
+            # parent_frame.columnconfigure(0, weight=1)
+            # parent_frame.columnconfigure(1, weight=1)
+            # self._create_button("(", self._make_command(self.logic.append_operator, "("), 0, 0, sci_options, parent=parent_frame)
+            # self._create_button(")", self._make_command(self.logic.append_operator, ")"), 0, 1, sci_options, parent=parent_frame)
         
     def _show_history_window(self):
         if self.history_window_open: return
