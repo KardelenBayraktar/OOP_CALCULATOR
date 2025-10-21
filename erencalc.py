@@ -243,7 +243,7 @@ class CalculatorUI:
         self._create_button("xʸ", self._make_command(self.logic.append_operator, "**"), 3, 4, sci_options)
         self._create_button("√x", self._make_command(self.logic.calculate_sqrt), 3, 5, sci_options)
         self._create_button("x!", self._make_command(self.logic.calculate_factorial), 4, 4, sci_options)
-        self._create_button("%", self._make_command(self.logic.append_operator), 4, 5, sci_options)        
+        self._create_button("%", self._make_command(self.logic.append_operator, "%"), 4, 5, sci_options)        
 
         # history button
         history_button = ctk.CTkButton(
